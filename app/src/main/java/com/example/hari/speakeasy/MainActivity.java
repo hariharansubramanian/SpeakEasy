@@ -13,8 +13,15 @@ public class MainActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Speak speakers[] = {new Human(),new Dog(),new Cat()};
+        Speak speaker1=new Speak() {
+            @Override
+            public String speak() {
+                return "hi i am pro codezzx";
+            }
+        };
+        Speak[] speakers = {new Human(),new Dog(),new Cat(),speaker1};
         saySomething(speakers);
+
     }
     public void saySomething(Speak[] speakers){
         for (Speak speaker:speakers){
